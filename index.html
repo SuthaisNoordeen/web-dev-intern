@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Kngu — Fresh flowers, bouquets, and arrangements delivered with care.">
+    <title>Kngu | Flower Shop &amp; Delivery</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <!-- Top announcement bar -->
+    <div class="announcement-bar" id="announcement-bar" role="region" aria-label="Promotion">
+        <p>All featured product 50% off <a href="#shop" class="nav-link" data-section="shop">Shop Now</a></p>
+        <button type="button" class="announcement-close" id="announcement-close" aria-label="Close announcement">&times;</button>
+    </div>
+
+    <header class="site-header">
+        <div class="container">
+            <div class="header-inner">
+                <a href="#home" class="logo nav-link" data-section="home" aria-label="Kngu home">
+                    <span class="logo-mark" aria-hidden="true">
+                        <svg viewBox="0 0 40 40" width="40" height="40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="20" cy="20" r="19" stroke="#e8444c" stroke-width="2"/>
+                            <path d="M20 28c0-5 6-9 6-14a6 6 0 10-12 0c0 5 6 9 6 14z" fill="#e8444c"/>
+                            <path d="M20 28v4" stroke="#e8444c" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </span>
+                    <span class="logo-text">Kngu.</span>
+                </a>
+
+                <nav class="nav-menu" id="desktop-nav" aria-label="Main navigation">
+                    <a href="#home" class="nav-link active" data-section="home">Home</a>
+                    <div class="nav-dropdown">
+                        <a href="#shop" class="nav-link nav-link--drop" data-section="shop">Shop <span class="nav-chevron" aria-hidden="true">&#9662;</span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#shop" class="nav-link" data-section="shop">All Bouquets</a></li>
+                            <li><a href="#shop" class="nav-link" data-section="shop">Roses</a></li>
+                            <li><a href="#shop" class="nav-link" data-section="shop">Seasonal</a></li>
+                        </ul>
+                    </div>
+                    <div class="nav-dropdown">
+                        <a href="#blog" class="nav-link nav-link--drop" data-section="blog">Blog <span class="nav-chevron" aria-hidden="true">&#9662;</span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#blog" class="nav-link" data-section="blog">Care Tips</a></li>
+                            <li><a href="#blog" class="nav-link" data-section="blog">Wedding Ideas</a></li>
+                        </ul>
+                    </div>
+                    <div class="nav-dropdown">
+                        <a href="#pages" class="nav-link nav-link--drop" data-section="pages">Pages <span class="nav-chevron" aria-hidden="true">&#9662;</span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#pages" class="nav-link" data-section="pages">About Us</a></li>
+                            <li><a href="#pages" class="nav-link" data-section="pages">FAQ</a></li>
+                        </ul>
+                    </div>
+                    <a href="#contact" class="nav-link" data-section="contact">Contact</a>
+                </nav>
+
+                <div class="header-actions">
+                    <form class="header-search hide-mobile" role="search" action="#" onsubmit="return false;">
+                        <input type="search" name="q" placeholder="Search our store" aria-label="Search our store">
+                        <button type="submit" aria-label="Search">
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+                            </svg>
+                        </button>
+                    </form>
+                    <button type="button" class="icon-btn hide-mobile" aria-label="My account">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
+                        </svg>
+                    </button>
+                    <button type="button" class="icon-btn cart-btn hide-mobile" aria-label="Shopping cart, 3 items">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/>
+                        </svg>
+                        <span class="cart-badge">3</span>
+                    </button>
+                    <button type="button" class="menu-toggle" id="menu-toggle" aria-label="Open menu" aria-expanded="false">
+                        <span></span><span></span><span></span>
+                    </button>
+                </div>
+            </div>
+
+            <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation" aria-hidden="true">
+                <a href="#home" class="nav-link active" data-section="home">Home</a>
+                <a href="#shop" class="nav-link" data-section="shop">Shop</a>
+                <a href="#blog" class="nav-link" data-section="blog">Blog</a>
+                <a href="#pages" class="nav-link" data-section="pages">Pages</a>
+                <a href="#contact" class="nav-link" data-section="contact">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="cart-modal" id="cart-modal" aria-label="Shopping cart" role="dialog" aria-modal="true" aria-hidden="true">
+        <div class="cart-modal-overlay" id="cart-modal-overlay"></div>
+        <div class="cart-modal-content">
+            <div class="cart-modal-header">
+                <h2>Your Cart</h2>
+                <button type="button" class="cart-modal-close" id="cart-modal-close" aria-label="Close cart">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                    </svg>
+                </button>
+            </div>
+
+            <div class="cart-modal-body" id="cart-modal-body">
+                <div class="cart-empty-state" id="cart-empty-state">
+                    <p>Your cart is empty</p>
+                    <p class="text-muted">Add some beautiful flowers to get started!</p>
+                </div>
+                <ul class="cart-items-list" id="cart-items-list" style="display: none;"></ul>
+            </div>
+
+            <div class="cart-modal-footer" id="cart-modal-footer" style="display: none;">
+                <div class="cart-summary">
+                    <div class="cart-subtotal">
+                        <span>Subtotal:</span>
+                        <span id="cart-subtotal">$0.00</span>
+                    </div>
+                    <button type="button" class="btn" id="checkout-btn">Proceed to Checkout</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <main>
+
+        <section class="hero" id="home" aria-label="Featured collection">
+            <button type="button" class="hero-arrow hero-arrow--prev" id="hero-prev" aria-label="Previous slide">&lt;</button>
+            <button type="button" class="hero-arrow hero-arrow--next" id="hero-next" aria-label="Next slide">&gt;</button>
+
+            <div class="hero-slide active" data-slide="0">
+                <div class="container">
+                    <div class="hero-grid">
+                        <div class="hero-content">
+                            <p class="hero-promo">
+                                <span class="hero-promo-line" aria-hidden="true"></span>
+                                <span>20% Off For New Members</span>
+                            </p>
+                            <h1 class="hero-title">HAPPY MOTHER'S DAY!</h1>
+                            <p class="hero-text">Bouquets your mom will love!</p>
+                            <a href="#shop" class="btn nav-link" data-section="shop">Start Shopping</a>
+                        </div>
+                        <div class="hero-image">
+                            <img src="images/Beautiful-Flower-drawings.jpg?v=5" alt="Fresh flower arrangement" width="360" height="300">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero-slide" data-slide="1">
+                <div class="container">
+                    <div class="hero-grid">
+                        <div class="hero-content">
+                            <p class="hero-promo">
+                                <span class="hero-promo-line" aria-hidden="true"></span>
+                                <span>Free Delivery This Week</span>
+                            </p>
+                            <h1 class="hero-title">SPRING BOUQUETS</h1>
+                            <p class="hero-text">Fresh seasonal flowers arranged by our expert florists.</p>
+                            <a href="#shop" class="btn nav-link" data-section="shop">Start Shopping</a>
+                        </div>
+                        <div class="hero-image">
+                            <img src="images/TeshornJackson-541cd15ff11f450a945e7b3a57d79c75.jpg?v=5" alt="Red rose flower bouquet" width="360" height="300">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="features-bar" aria-label="Store benefits">
+            <div class="container">
+                <div class="features-grid">
+                    <article class="feature-item">
+                        <div class="feature-icon feature-icon--red" aria-hidden="true">&#128666;</div>
+                        <div>
+                            <h3>Free Shipping</h3>
+                            <p>On all orders over $75.00</p>
+                        </div>
+                    </article>
+                    <article class="feature-item">
+                        <div class="feature-icon feature-icon--teal" aria-hidden="true">&#8634;</div>
+                        <div>
+                            <h3>Free Returns</h3>
+                            <p>Within 30 days for your peace of mind</p>
+                        </div>
+                    </article>
+                    <article class="feature-item">
+                        <div class="feature-icon feature-icon--purple" aria-hidden="true">&#128274;</div>
+                        <div>
+                            <h3>100% Payment</h3>
+                            <p>Secure payment on every transaction</p>
+                        </div>
+                    </article>
+                    <article class="feature-item">
+                        <div class="feature-icon feature-icon--lime" aria-hidden="true">&#9733;</div>
+                        <div>
+                            <h3>Member Discount</h3>
+                            <p>On every order over $200.00</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="section new-products" id="shop">
+            <div class="container">
+                <h2 class="section-title">New Products</h2>
+                <p class="section-subtitle">Discover our latest hand-crafted arrangements, freshly picked and ready to brighten any room.</p>
+
+                <div class="product-grid">
+                    <article class="product-card">
+                        <div class="product-image-wrap">
+                            <span class="product-badge">Sale</span>
+                            <img src="images/Beautiful-Flowers.jpg.webp?v=5" alt="Pink rose bouquet">
+                            <div class="product-hover-actions">
+                                <button type="button" aria-label="Add to wishlist"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg></button>
+                                <button type="button" aria-label="Compare"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"/></svg></button>
+                                <button type="button" aria-label="Quick view"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg></button>
+                            </div>
+                        </div>
+                        <div class="stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                        <h3 class="product-name">Pink Rose Bouquet</h3>
+                        <p class="product-price"><del>$45.00</del> $32.00</p>
+                        <button type="button" class="btn btn-add-to-cart add-to-cart-btn" aria-label="Add to cart">Add to Cart</button>
+                    </article>
+
+                    <article class="product-card">
+                        <div class="product-image-wrap">
+                            <span class="product-badge product-badge--new">New</span>
+                            <img src="images/vibrant-pink-flowers-0410-5705267.webp?v=5" alt="Red roses in vase">
+                            <div class="product-hover-actions">
+                                <button type="button" aria-label="Add to wishlist"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg></button>
+                                <button type="button" aria-label="Compare"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"/></svg></button>
+                                <button type="button" aria-label="Quick view"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg></button>
+                            </div>
+                        </div>
+                        <div class="stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                        <h3 class="product-name">Classic Red Roses</h3>
+                        <p class="product-price">$38.00</p>
+                        <button type="button" class="btn btn-add-to-cart add-to-cart-btn" aria-label="Add to cart">Add to Cart</button>
+                    </article>
+
+                    <article class="product-card">
+                        <div class="product-image-wrap">
+                            <span class="product-badge">Sale</span>
+                            <img src="images/sunlit-blooming-flower-stockcake.webp?v=5" alt="Sunflowers arrangement">
+                            <div class="product-hover-actions">
+                                <button type="button" aria-label="Add to wishlist"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg></button>
+                                <button type="button" aria-label="Compare"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"/></svg></button>
+                                <button type="button" aria-label="Quick view"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg></button>
+                            </div>
+                        </div>
+                        <div class="stars" aria-label="4 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9734;</div>
+                        <h3 class="product-name">Sunny Sunflower Vase</h3>
+                        <p class="product-price"><del>$52.00</del> $41.00</p>
+                        <button type="button" class="btn btn-add-to-cart add-to-cart-btn" aria-label="Add to cart">Add to Cart</button>
+                    </article>
+
+                    <article class="product-card">
+                        <div class="product-image-wrap">
+                            <span class="product-badge product-badge--new">New</span>
+                            <img src="images/cosmos-flowers_1373-83.avif?v=5" alt="Mixed tulip bouquet">
+                            <div class="product-hover-actions">
+                                <button type="button" aria-label="Add to wishlist"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg></button>
+                                <button type="button" aria-label="Compare"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"/></svg></button>
+                                <button type="button" aria-label="Quick view"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg></button>
+                            </div>
+                        </div>
+                        <div class="stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                        <h3 class="product-name">Spring Tulip Mix</h3>
+                        <p class="product-price">$29.00</p>
+                        <button type="button" class="btn btn-add-to-cart add-to-cart-btn" aria-label="Add to cart">Add to Cart</button>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="section promo" id="pages">
+            <div class="container">
+                <div class="promo-grid">
+                    <div class="promo-image">
+                        <img src="images/purple-flowers-in-the-rain-a-beautiful-spring-scene-photo.jpg?v=5" alt="Tulips in glass vases">
+                    </div>
+                    <div class="promo-content">
+                        <h2>Surprise Your Valentine! Let us arrange a smile for her.</h2>
+                        <p>Our florists create stunning arrangements for every occasion. From romantic roses to cheerful mixed bouquets, we deliver happiness straight to the door.</p>
+                        <ul class="promo-list">
+                            <li>Handpicked fresh flowers daily</li>
+                            <li>Expert arrangement by certified florists</li>
+                            <li>Same-day delivery in select areas</li>
+                        </ul>
+                        <a href="#" class="btn">Shop Now</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section featured">
+            <div class="container">
+                <h2 class="section-title">Featured Items</h2>
+                <p class="section-subtitle">Browse our most-loved bouquets and arrangements, curated for every moment that matters.</p>
+
+                <div class="featured-tabs" role="tablist" aria-label="Product categories">
+                    <button type="button" class="active" role="tab" aria-selected="true" data-filter="all">All</button>
+                    <button type="button" role="tab" aria-selected="false" data-filter="new">New</button>
+                    <button type="button" role="tab" aria-selected="false" data-filter="bestseller">Best Sellers</button>
+                </div>
+
+                <div class="product-grid featured-grid" id="featured-grid">
+                    <!-- Row 1 -->
+                    <article class="product-card" data-category="bestseller">
+                        <div class="product-image-wrap">
+                            <span class="product-badge">Sale</span>
+                            <img src="images/45b9e6ba2973f3e714c5f46bda44ec3d.jpg?v=5" alt="Peony bouquet">
+                        </div>
+                        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                        <h3 class="product-name">Blush Peony Dream</h3>
+                        <p class="product-price"><del>$55.00</del> $42.00</p>
+                        <button type="button" class="btn btn-add-to-cart add-to-cart-btn" aria-label="Add to cart">Add to Cart</button>
+                    </article>
+                    <article class="product-card" data-category="new">
+                        <div class="product-image-wrap">
+                            <span class="product-badge product-badge--new">New</span>
+                            <img src="images/8a2de616b44b899ea4d0f5bead58ca84.jpg?v=5" alt="White lilies">
+                        </div>
+                        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9734;</div>
+                        <h3 class="product-name">White Lily Elegance</h3>
+                        <p class="product-price">$36.00</p>
+                        <button type="button" class="btn btn-add-to-cart add-to-cart-btn" aria-label="Add to cart">Add to Cart</button>
+                    </article>
+                    <article class="product-card" data-category="bestseller">
+                        <div class="product-image-wrap">
+                            <img src="images/Verdissimo_flores_bonitas_CONT_09.webp?v=5" alt="Wildflower mix">
+                        </div>
+                        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                        <h3 class="product-name">Meadow Wildflowers</h3>
+                        <p class="product-price">$28.00</p>
+                        <button type="button" class="btn btn-add-to-cart add-to-cart-btn" aria-label="Add to cart">Add to Cart</button>
+                    </article>
+                    <article class="product-card" data-category="new">
+                        <div class="product-image-wrap">
+                            <span class="product-badge">Sale</span>
+                            <img src="images/dahlias-flowers-with-white-petals-on-the-branches-royalty-free-image-1757518785.avif?v=5" alt="Orchid plant">
+                        </div>
+                        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                        <h3 class="product-name">Purple Orchid Pot</h3>
+                        <p class="product-price"><del>$48.00</del> $35.00</p>
+                        <button type="button" class="btn btn-add-to-cart add-to-cart-btn" aria-label="Add to cart">Add to Cart</button>
+                    </article>
+                    <!-- Row 2 -->
+                    <article class="product-card" data-category="bestseller">
+                        <div class="product-image-wrap">
+                            <img src="images/images.jpeg?v=5" alt="Carnation bouquet">
+                        </div>
+                        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9734;</div>
+                        <h3 class="product-name">Carnation Charm</h3>
+                        <p class="product-price">$24.00</p>
+                        <button type="button" class="btn btn-add-to-cart add-to-cart-btn" aria-label="Add to cart">Add to Cart</button>
+                    </article>
+                    <article class="product-card" data-category="new">
+                        <div class="product-image-wrap">
+                            <span class="product-badge product-badge--new">New</span>
+                            <img src="images/images (1).jpeg?v=5" alt="Daisy bouquet">
+                        </div>
+                        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                        <h3 class="product-name">Daisy Delight</h3>
+                        <p class="product-price">$22.00</p>
+                        <button type="button" class="btn btn-add-to-cart add-to-cart-btn" aria-label="Add to cart">Add to Cart</button>
+                    </article>
+                    <article class="product-card" data-category="bestseller">
+                        <div class="product-image-wrap">
+                            <span class="product-badge">Sale</span>
+                            <img src="images/shutterstock_669619393-Optimized.jpg?v=5" alt="Hydrangea arrangement">
+                        </div>
+                        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                        <h3 class="product-name">Blue Hydrangea</h3>
+                        <p class="product-price"><del>$60.00</del> $47.00</p>
+                        <button type="button" class="btn btn-add-to-cart add-to-cart-btn" aria-label="Add to cart">Add to Cart</button>
+                    </article>
+                    <article class="product-card" data-category="bestseller">
+                        <div class="product-image-wrap">
+                            <img src="images/Beautiful-Flowers.jpg.webp?v=5" alt="Rose paradise bouquet">
+                        </div>
+                        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                        <h3 class="product-name">Rose Paradise</h3>
+                        <p class="product-price">$59.00</p>
+                        <button type="button" class="btn btn-add-to-cart add-to-cart-btn" aria-label="Add to cart">Add to Cart</button>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="testimonials" aria-label="Customer testimonials">
+            <img class="testimonial-deco testimonial-deco--left" src="images/deco-tulip.jpg?v=5" alt="" aria-hidden="true">
+            <img class="testimonial-deco testimonial-deco--right" src="images/deco-tulip.jpg?v=5" alt="" aria-hidden="true">
+
+            <div class="container">
+                <div class="testimonial-inner">
+                    <button type="button" class="testimonial-arrow testimonial-arrow--prev" id="testimonial-prev" aria-label="Previous testimonial">&#10094;</button>
+
+                    <blockquote>
+                        <p class="testimonial-quote" id="testimonial-text">"The flowers arrived fresh and beautifully arranged. My mother was thrilled — Kogul made Mother's Day truly special!"</p>
+                        <footer>
+                            <img class="testimonial-avatar" id="testimonial-avatar" src="images/Sarah-Mitchell-cropped-new-bg.jpg?v=5" alt="Sarah Mitchell" width="64" height="64">
+                            <p class="testimonial-name" id="testimonial-name">Sarah Mitchell</p>
+                            <p class="testimonial-role" id="testimonial-role">Happy Customer</p>
+                        </footer>
+                    </blockquote>
+
+                    <button type="button" class="testimonial-arrow testimonial-arrow--next" id="testimonial-next" aria-label="Next testimonial">&#10095;</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="section experts">
+            <div class="container">
+                <h2 class="section-title">Flower Experts</h2>
+                <p class="section-subtitle">Meet the talented team behind every bouquet we deliver.</p>
+
+                <div class="team-grid">
+                    <article class="team-member">
+                        <img class="team-photo" src="images/team-1.jpg?v=5" alt="Emma Collins, Florist" width="140" height="140" loading="lazy">
+                        <h3>Emma Collins</h3>
+                        <span>Florist</span>
+                    </article>
+                    <article class="team-member">
+                        <img class="team-photo" src="images/team-2.jpg?v=5" alt="James Wright, Head Florist" width="140" height="140" loading="lazy">
+                        <h3>James Wright</h3>
+                        <span>Head Florist</span>
+                    </article>
+                    <article class="team-member">
+                        <img class="team-photo" src="images/team-3.jpg?v=5" alt="Sophie Lane, Designer" width="140" height="140" loading="lazy">
+                        <h3>Sophie Lane</h3>
+                        <span>Designer</span>
+                    </article>
+                    <article class="team-member">
+                        <img class="team-photo" src="images/team-4.jpg?v=5" alt="David Park, Delivery Lead" width="140" height="140" loading="lazy">
+                        <h3>David Park</h3>
+                        <span>Delivery Lead</span>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="section blog-section" id="blog">
+            <div class="container">
+                <h2 class="section-title">From Our Blog</h2>
+                <p class="section-subtitle">Tips, stories, and inspiration from the world of flowers.</p>
+
+                <div class="blog-grid">
+                    <article class="blog-card">
+                        <img src="images/photo-1695897706183-5295269554b9.avif?v=5" alt="Flower care tips">
+                        <p class="blog-meta">21 May 2026 &nbsp;|&nbsp; By Admin</p>
+                        <h3><a href="#">How to Keep Your Cut Flowers Fresh Longer</a></h3>
+                        <p class="blog-excerpt">Simple tricks to extend the life of your bouquet — from trimming stems to the right vase water mix.</p>
+                        <a href="#" class="read-more">Read More &rarr;</a>
+                    </article>
+                    <article class="blog-card">
+                        <img src="images/sunlit-blooming-flower-stockcake.webp?v=5" alt="Wedding flowers">
+                        <p class="blog-meta">18 May 2026 &nbsp;|&nbsp; By Admin</p>
+                        <h3><a href="#">Choosing the Perfect Wedding Bouquet</a></h3>
+                        <p class="blog-excerpt">A guide to seasonal blooms, colour palettes, and styles that complement your big day.</p>
+                        <a href="#" class="read-more">Read More &rarr;</a>
+                    </article>
+                    <article class="blog-card">
+                        <img src="images/cosmos-flowers_1373-83.avif?v=5" alt="Indoor plants">
+                        <p class="blog-meta">12 May 2026 &nbsp;|&nbsp; By Admin</p>
+                        <h3><a href="#">Best Indoor Plants for Beginners</a></h3>
+                        <p class="blog-excerpt">Low-maintenance greenery that thrives indoors — ideal gifts or home décor additions.</p>
+                        <a href="#" class="read-more">Read More &rarr;</a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="section about-section" id="about">
+            <div class="container">
+                <div class="about-grid">
+                    <div class="about-content">
+                        <h2 class="section-title">About Kngu</h2>
+                        <p>At Kngu, we believe flowers are nature's perfect gift. For over a decade, we've been committed to delivering the freshest, most beautifully arranged bouquets straight to your doorstep.</p>
+                        
+                        <h3>Our Mission</h3>
+                        <p>To make every moment special by providing premium floral arrangements that bring joy, celebration, and heartfelt emotions to life.</p>
+
+                        <h3>Why Choose Us?</h3>
+                        <ul class="about-list">
+                            <li>✓ Hand-picked flowers daily from premium sources</li>
+                            <li>✓ Expert florists with 10+ years experience</li>
+                            <li>✓ Same-day delivery in select areas</li>
+                            <li>✓ 100% freshness guarantee</li>
+                            <li>✓ Eco-friendly packaging</li>
+                        </ul>
+
+                        <a href="#shop" class="nav-link btn" data-section="shop">Shop Now</a>
+                    </div>
+                    <div class="about-image">
+                        <img src="images/photo-1695897706183-5295269554b9.avif?v=5" alt="Kngu florist team arranging flowers">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section faq-section">
+            <div class="container">
+                <h2 class="section-title">Frequently Asked Questions</h2>
+                <p class="section-subtitle">Find answers to common questions about our services and products.</p>
+
+                <div class="faq-grid">
+                    <div class="faq-item">
+                        <button type="button" class="faq-trigger" aria-expanded="false">
+                            <span class="faq-title">How long do flowers typically last?</span>
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer" style="display: none;">
+                            <p>Most fresh flowers last 7-10 days with proper care. Our care guide includes tips on water changes, stem trimming, and ideal temperature to maximize freshness.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button type="button" class="faq-trigger" aria-expanded="false">
+                            <span class="faq-title">What areas do you deliver to?</span>
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer" style="display: none;">
+                            <p>We offer same-day delivery in most urban areas within 50 km of our headquarters. Check our delivery zone at checkout to confirm service availability.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button type="button" class="faq-trigger" aria-expanded="false">
+                            <span class="faq-title">Can I customize my bouquet?</span>
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer" style="display: none;">
+                            <p>Absolutely! Contact our florists via email or phone to discuss custom arrangements. We create personalized bouquets for weddings, events, and special occasions.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button type="button" class="faq-trigger" aria-expanded="false">
+                            <span class="faq-title">What payment methods do you accept?</span>
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer" style="display: none;">
+                            <p>We accept all major credit cards, debit cards, digital wallets (Apple Pay, Google Pay), and bank transfers. All transactions are secure and encrypted.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button type="button" class="faq-trigger" aria-expanded="false">
+                            <span class="faq-title">Do you offer corporate bulk orders?</span>
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer" style="display: none;">
+                            <p>Yes! We specialize in corporate arrangements. For bulk orders, please contact our corporate team for custom pricing and personalized service.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button type="button" class="faq-trigger" aria-expanded="false">
+                            <span class="faq-title">What's your return or refund policy?</span>
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer" style="display: none;">
+                            <p>We offer a 100% satisfaction guarantee. If you're not happy with your order, contact us within 24 hours for a full refund or replacement.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section contact-section" id="contact">
+            <div class="container">
+                <h2 class="section-title">Get in Touch</h2>
+                <p class="section-subtitle">Have questions? We'd love to hear from you. Send us a message and we'll respond within 24 hours.</p>
+
+                <div class="contact-grid">
+                    <div class="contact-form-wrapper">
+                        <form class="contact-form" id="contact-form" novalidate>
+                            <div class="form-group">
+                                <label for="contact-name">Full Name</label>
+                                <input type="text" id="contact-name" name="name" required>
+                                <span class="form-error"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="contact-email">Email Address</label>
+                                <input type="email" id="contact-email" name="email" required>
+                                <span class="form-error"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="contact-phone">Phone Number</label>
+                                <input type="tel" id="contact-phone" name="phone">
+                                <span class="form-error"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="contact-subject">Subject</label>
+                                <select id="contact-subject" name="subject" required>
+                                    <option value="">-- Select a subject --</option>
+                                    <option value="general">General Inquiry</option>
+                                    <option value="custom">Custom Arrangement Request</option>
+                                    <option value="corporate">Corporate Order</option>
+                                    <option value="feedback">Feedback</option>
+                                    <option value="complaint">Complaint</option>
+                                </select>
+                                <span class="form-error"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="contact-message">Message</label>
+                                <textarea id="contact-message" name="message" rows="5" required></textarea>
+                                <span class="form-error"></span>
+                            </div>
+
+                            <button type="submit" class="btn">Send Message</button>
+                        </form>
+                        <div id="contact-success" style="display: none;" class="contact-success">
+                            <h3>Thank you!</h3>
+                            <p>Your message has been sent successfully. We'll get back to you soon!</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-info-wrapper">
+                        <div class="contact-info-item">
+                            <h3>Visit Us</h3>
+                            <p>123 Bloom Street<br>Garden City, GC 12345<br>United States</p>
+                        </div>
+
+                        <div class="contact-info-item">
+                            <h3>Call Us</h3>
+                            <p><a href="tel:+15551234567">+1 (555) 123-4567</a><br>Mon-Fri: 9am-6pm<br>Sat-Sun: 10am-4pm</p>
+                        </div>
+
+                        <div class="contact-info-item">
+                            <h3>Email Us</h3>
+                            <p><a href="mailto:hello@kngu.com">hello@kngu.com</a><br>Response time: 24 hours</p>
+                        </div>
+
+                        <div class="contact-info-item">
+                            <h3>Follow Us</h3>
+                            <div class="social-links-expanded">
+                                <a href="#" aria-label="Facebook">Facebook</a>
+                                <a href="#" aria-label="Instagram">Instagram</a>
+                                <a href="#" aria-label="Twitter">Twitter</a>
+                                <a href="#" aria-label="Pinterest">Pinterest</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="newsletter">
+            <div class="container">
+                <h2>Join The Colorful Bunch!</h2>
+                <form class="newsletter-form" action="#" method="post">
+                    <label for="email" class="visually-hidden">Email address</label>
+                    <input type="email" id="email" name="email" placeholder="Your email address" required>
+                    <button type="submit" class="btn">Subscribe</button>
+                </form>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="site-footer" id="contact">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="#home" class="logo nav-link" data-section="home"><span class="logo-mark" aria-hidden="true"><svg viewBox="0 0 40 40" width="32" height="32" fill="none"><circle cx="20" cy="20" r="19" stroke="#e8444c" stroke-width="2"/><path d="M20 28c0-5 6-9 6-14a6 6 0 10-12 0c0 5 6 9 6 14z" fill="#e8444c"/></svg></span><span class="logo-text">Kngu.</span></a>
+                    <p>We bring fresh, hand-arranged flowers to your doorstep. Quality blooms and thoughtful design for every occasion.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook">f</a>
+                        <a href="#" aria-label="Twitter">t</a>
+                        <a href="#" aria-label="Instagram">in</a>
+                        <a href="#" aria-label="LinkedIn">li</a>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Our Services</h4>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Flower Delivery</a></li>
+                        <li><a href="#">Wedding Flowers</a></li>
+                        <li><a href="#">Gift Cards</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#">Shop</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Help</h4>
+                    <ul>
+                        <li><a href="#">My Account</a></li>
+                        <li><a href="#">Order Tracking</a></li>
+                        <li><a href="#">Returns</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Contact Info</h4>
+                    <ul class="contact-info">
+                        <li>123 Bloom Street, Garden City</li>
+                        <li>+1 (555) 123-4567</li>
+                        <li>hello@kogulflowers.com</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 Kngu. All rights reserved.</p>
+                <div class="payment-icons" aria-label="Accepted payment methods">
+                    <span>VISA</span>
+                    <span>MC</span>
+                    <span>AMEX</span>
+                    <span>PayPal</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <style>
+        .visually-hidden {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            border: 0;
+        }
+    </style>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

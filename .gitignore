@@ -1,0 +1,14 @@
+# Node modules
+node_modules/
+
+# System files
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# Build
+dist/
+build/
